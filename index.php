@@ -60,19 +60,19 @@ switch ($page) {
         $controllerStudent->search_Student();
         break;
     case 'list-borrow':
-        $controllerDetail->viewListOrder();
+        $controllerBorrow->viewBorrow();
         break;
     case 'add-borrow':
         $controllerBorrow->addBorrow();
         break;
+    case 'view-order':
+        $controllerDetail->viewListOrder();
+        break;
     case 'add-orderBook':
         $controllerDetail->addOrderBook();
         break;
-//    case 'view-order':
-//        $controllerDetail->viewListOrder();
-//        break;
-    case 'detail-order':
-        $controllerDetail->showOrder();
+    case 'update-status':
+        $controllerBorrow->updateBorrow();
         break;
     default:
         $controllerBook->viewBook();

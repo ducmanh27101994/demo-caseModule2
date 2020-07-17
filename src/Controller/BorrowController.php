@@ -42,4 +42,24 @@ class BorrowController
         }
     }
 
+    function updateBorrow(){
+        if($_SERVER['REQUEST_METHOD'] == 'GET'){
+            $id = $_REQUEST['id'];
+            $students = $this->students->getAllStudent();
+            $borrows = $this->borrowController->getBorrowById($id);
+            include_once 'src/View/tbl_borrows/updateBorrows.php';
+        } else {
+            $id = $_REQUEST['id'];
+            $date_borrow = $_REQUEST['date_borrow'];
+            $date_give = $_REQUEST['date_give'];
+            $status = $_REQUEST['status'];
+            $student_id = $_REQUEST['student_id'];
+
+            $borrow = new Borrow($id,$date_borrow,$date_give,$status,$student_id);
+            $this->borrowController->updateStatus($borrow);
+            header('location:index.php?page=view-order');
+
+        }
+    }
+
 }

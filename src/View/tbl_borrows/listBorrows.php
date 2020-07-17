@@ -3,10 +3,10 @@
 <table>
     <tr>
         <th>STT</th>
-        <th>BORROWS DATA</th>
+        <th>ID CARD</th>
+        <th>BORROWS DATE</th>
         <th>RETURN BORROWS</th>
         <th>STATUS</th>
-        <th>STUDENT CODE</th>
         <th></th>
     </tr>
     <?php if(empty($borrows)) :?>
@@ -21,6 +21,7 @@
             <td><?php echo $borrow->getDateBorrow() ?></td>
             <td><?php echo $borrow->getDateGive() ?></td>
             <td><?php echo $borrow->getStatus() ?></td>
+            <td><a href="index.php?page=update-status&id=<?php echo $borrow->getId()?>">Update Status</a></td>
 
         </tr>
         <?php endforeach;?>

@@ -1,8 +1,6 @@
 <h3>Thông tin phiếu mượn của sinh viên</h3>
 
-
 <table>
-
     <tr>
         <th>STT</th>
         <th>Card</th>
@@ -10,7 +8,6 @@
         <th>Date Borrow</th>
         <th>Return Borrow</th>
     </tr>
-
     <?php if (empty($orders)): ?>
         <tr>
             <th>

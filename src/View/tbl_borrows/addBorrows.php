@@ -9,7 +9,7 @@
 
     <select name="student_id">
         <?php foreach ($students as $key => $student): ?>
-            <option value="<?php echo $student->getId(); ?>"><?php echo $student->getStudentName(); ?></option>
+            <option value="<?php echo $student->getId(); ?>"><?php echo $student->getStudentName()." - " .$student->getClass(); ?></option>
         <?php endforeach; ?>
     </select>
     <button type="submit">Submit</button>

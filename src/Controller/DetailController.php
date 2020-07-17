@@ -6,7 +6,7 @@ namespace Study\Controller;
 
 use Study\Model\BookManager;
 use Study\Model\BorrowManager;
-use Study\Model\OrderBook;
+use Study\Model\OrderManager;
 use Study\Model\StudentManager;
 
 class DetailController
@@ -17,7 +17,7 @@ class DetailController
     protected $students;
     public function __construct()
     {
-        $this->detailController=new OrderBook();
+        $this->detailController=new OrderManager();
         $this->borrows = new BorrowManager();
         $this->books = new BookManager();
         $this->students= new StudentManager();
@@ -33,23 +33,24 @@ class DetailController
             $borrow_id = $_REQUEST['borrow_id'];
 
             $this->detailController->addOrderBook($book_id,$borrow_id);
-            header('location:index.php?page=detail-order');
+            header('location:index.php?page=view-order');
         }
     }
-
-
 
     function viewListOrder(){
+        if ($_SERVER['REQUEST_METHOD']=='GET'){
+            $id = $_REQUEST['id'];
             $orders = $this->detailController->viewListOrder();
+            $borrows = $this->borrows->getBorrowById($id);
             include_once 'src/View/detail/showOrder.php';
+        }
+
 
     }
 
-    function showOrder(){
-        if($_SERVER['REQUEST_METHOD']=='POST'){
-            $id = $_REQUEST['id'];
-
-        }
+    function showOrder($id){
+       $order = $this->detailController->showOrderById($id);
+       include_once 'src/View/detail/detailOrder.php';
     }
 
 }

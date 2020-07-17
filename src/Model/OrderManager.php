@@ -4,7 +4,7 @@
 namespace Study\Model;
 
 
-class OrderBook
+class OrderManager
 {
     protected $orderBook;
 
