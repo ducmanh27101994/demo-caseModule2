@@ -3,7 +3,10 @@ require __DIR__ . "/vendor/autoload.php";
 
 $controllerStudent = new \Study\Controller\StudentController();
 $controllerBook = new \Study\Controller\BookController();
+$controllerBorrow = new \Study\Controller\BorrowController();
+$controllerDetail = new \Study\Controller\DetailController();
 $page = isset($_REQUEST['page']) ? $_REQUEST['page'] : NULL;
+
 
 ?>
 <!doctype html>
@@ -16,12 +19,15 @@ $page = isset($_REQUEST['page']) ? $_REQUEST['page'] : NULL;
     <title>Document</title>
 </head>
 <body>
-<?php include_once 'src/View/Menu/menu.php' ?>
-<br>
-<br>
-<hr/>
+
 
 <?php
+include_once 'src/View/Menu/menu.php';
+echo '<br>';
+echo '<br>';
+echo '<hr/>';
+
+
 switch ($page) {
     case 'list-book':
         $controllerBook->viewBook();
@@ -53,6 +59,18 @@ switch ($page) {
     case 'search-student':
         $controllerStudent->search_Student();
         break;
+    case 'list-borrow':
+        $controllerDetail->viewListOrder();
+        break;
+    case 'add-borrow':
+        $controllerBorrow->addBorrow();
+        break;
+    case 'add-orderBook':
+        $controllerDetail->addOrderBook();
+        break;
+//    case 'view-order':
+//        $controllerDetail->viewListOrder();
+//        break;
     default:
         $controllerBook->viewBook();
 }

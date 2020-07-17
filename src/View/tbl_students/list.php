@@ -6,11 +6,11 @@
 </form>
 <table>
     <tr>
-        <td>STT</td>
-        <td>STUDENT NAME</td>
-        <td>CLASS</td>
-        <td>PHONE</td>
-        <td>ADDRESS</td>
+        <th>STT</th>
+        <th>STUDENT NAME</th>
+        <th>CLASS</th>
+        <th>PHONE</th>
+        <th>ADDRESS</th>
     </tr>
     <?php if(empty($students)):?>
     <tr>

@@ -6,10 +6,12 @@
     <a href="index.php?page=list-book">Back</a>
 </form>
 <table>
-    <tr>STT</tr>
-    <tr>BOOK NAME</tr>
-    <tr>AUTHOR</tr>
-    <tr>STATUS</tr>
+    <tr>
+    <th>STT</th>
+    <th>BOOK NAME</th>
+    <th>AUTHOR</th>
+    <th>STATUS</th>
+    </tr>
 
 <?php if(empty($books)): ?>
 <tr>
