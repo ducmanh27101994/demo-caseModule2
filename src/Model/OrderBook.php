@@ -28,8 +28,8 @@ class OrderBook
         $statement = $this->orderBook->connectDB()->query($sql);
         $statement->bindParam(':id',$id);
         $statement->execute();
-        $item = $statement->fetchAll();
-        return $item;
+        return $statement->fetchAll();
+
     }
 
     function viewListOrder(){
@@ -38,7 +38,6 @@ class OrderBook
 
         return $statement->fetchAll();
     }
-
 
 
 }

@@ -71,6 +71,9 @@ switch ($page) {
 //    case 'view-order':
 //        $controllerDetail->viewListOrder();
 //        break;
+    case 'detail-order':
+        $controllerDetail->showOrder();
+        break;
     default:
         $controllerBook->viewBook();
 }

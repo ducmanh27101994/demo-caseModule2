@@ -33,17 +33,23 @@ class DetailController
             $borrow_id = $_REQUEST['borrow_id'];
 
             $this->detailController->addOrderBook($book_id,$borrow_id);
-            header('location:index.php?page=view-order');
+            header('location:index.php?page=detail-order');
         }
     }
 
 
 
     function viewListOrder(){
-        if($_SERVER['REQUEST_METHOD']=='GET') {
             $orders = $this->detailController->viewListOrder();
             include_once 'src/View/detail/showOrder.php';
+
+    }
+
+    function showOrder(){
+        if($_SERVER['REQUEST_METHOD']=='POST'){
+            $id = $_REQUEST['id'];
+
         }
-}
+    }
 
 }
