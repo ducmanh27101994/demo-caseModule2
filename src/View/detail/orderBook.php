@@ -14,6 +14,7 @@
 
 
     <button type="submit">Submit</button>
+    <button onclick="window.history.go(-1); return false;">Back</button>
 
 
 </form>

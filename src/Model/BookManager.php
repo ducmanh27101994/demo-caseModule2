@@ -13,13 +13,13 @@ class BookManager
         $this->dataBook= new DBconnect();
     }
     function getAllBook(){
-        $sql = "SELECT * FROM `tbl_books`";
+        $sql = "SELECT * FROM `tbl_books` ORDER by id DESC";
         $statement = $this->dataBook->connectDB()->query($sql);
         $statement->execute();
         $data = $statement->fetchAll();
         $arr = [];
         foreach ($data as $key => $item){
-            $book = new Book($item['name'],$item['author'],$item['status']);
+            $book = new Book($item['name'],$item['author'],$item['status'],$item['image']);
             $book->setId($item['id']);
             array_push($arr,$book);
         }
@@ -27,12 +27,13 @@ class BookManager
     }
 
     function addBook($book){
-        $sql = "INSERT INTO `tbl_books`(`id`, `name`, `author`, `status`) VALUES (:id,:name,:author,:status)";
+        $sql = "INSERT INTO `tbl_books`(`id`, `name`, `author`, `status`,`image`) VALUES (:id,:name,:author,:status,:image)";
         $statement = $this->dataBook->connectDB()->prepare($sql);
         $statement->bindParam(':id',$book->getId());
         $statement->bindParam(':name',$book->getName());
         $statement->bindParam(':author',$book->getAuthor());
         $statement->bindParam(':status',$book->getStatus());
+        $statement->bindParam(':image',$book->getImage());
         $statement->execute();
     }
     function deleteBook($id){
@@ -51,12 +52,14 @@ class BookManager
         return $item;
     }
     function updateBook($book){
-        $sql = "UPDATE `tbl_books` SET `id`=:id,`name`=:name,`author`=:author,`status`=:status WHERE `id`=:id";
+        $sql = "UPDATE `tbl_books` SET `id`=:id,`name`=:name,`author`=:author,`status`=:status,`image`=:image WHERE `id`=:id";
         $statement = $this->dataBook->connectDB()->prepare($sql);
         $statement->bindParam(':id', $book->getId());
         $statement->bindParam(':name', $book->getName());
         $statement->bindParam(':author', $book->getAuthor());
         $statement->bindParam(':status', $book->getStatus());
+        $statement->bindParam(':image', $book->getImage());
+
         $statement->execute();
     }
 
@@ -68,7 +71,7 @@ class BookManager
         $data = $statement->fetchAll();
         $arr = [];
         foreach ($data as $key => $item){
-            $book = new Book($item['name'],$item['author'],$item['status']);
+            $book = new Book($item['name'],$item['author'],$item['status'],$item['image']);
             $book->setId($item['id']);
             array_push($arr,$book);
         }

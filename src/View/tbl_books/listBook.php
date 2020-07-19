@@ -3,7 +3,7 @@
 <form method="post" action="index.php?page=search-book">
     <input type="text" name="keywordBook" placeholder="Search Book">
     <button type="submit">Search Book</button>
-    <a href="index.php?page=list-book">Back</a>
+    <button onclick="window.history.go(-1); return false;">Back</button>
 </form>
 <table>
     <tr>
@@ -11,6 +11,7 @@
     <th>BOOK NAME</th>
     <th>AUTHOR</th>
     <th>STATUS</th>
+    <th COLSPAN="2">ACTION</th>
     </tr>
 
 <?php if(empty($books)): ?>
@@ -24,6 +25,7 @@
     <td><?php echo $book->getName() ?></td>
     <td><?php echo $book->getAuthor() ?></td>
     <td><?php echo $book->getStatus() ?></td>
+    <td><img src="<?php echo $book->getImage() ?>" style="width: 65px;height: 65px"></td>
     <td><a href="index.php?page=delete-book&id=<?php echo $book->getId() ?>">Delete</a></td>
     <td><a href="index.php?page=update-book&id=<?php echo $book->getId() ?>">Update</a></td>
     <td></td>

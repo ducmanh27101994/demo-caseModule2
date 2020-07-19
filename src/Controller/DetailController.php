@@ -33,24 +33,58 @@ class DetailController
             $borrow_id = $_REQUEST['borrow_id'];
 
             $this->detailController->addOrderBook($book_id,$borrow_id);
-            header('location:index.php?page=view-order');
+            header("location:index.php?page=view-order");
         }
     }
 
     function viewListOrder(){
         if ($_SERVER['REQUEST_METHOD']=='GET'){
-            $id = $_REQUEST['id'];
             $orders = $this->detailController->viewListOrder();
-            $borrows = $this->borrows->getBorrowById($id);
             include_once 'src/View/detail/showOrder.php';
         }
 
 
     }
 
-    function showOrder($id){
-       $order = $this->detailController->showOrderById($id);
-       include_once 'src/View/detail/detailOrder.php';
+    function showOrderBorrow()
+    {
+        if ($_SERVER['REQUEST_METHOD'] == 'GET') {
+            $orders = $this->detailController->showOrderBorrow();
+            include_once 'src/View/detail/detailOrder.php';
+        }
     }
+
+    function showOrderBorrowById(){
+        if ($_SERVER['REQUEST_METHOD'] == 'GET'){
+            $id = $_REQUEST['id'];
+            $orders = $this->detailController->showOrderBorrowById($id);
+            include_once 'src/View/detail/Order.php';
+        }
+    }
+    function deleteOrder(){
+        if ($_SERVER['REQUEST_METHOD'] == 'GET'){
+            $book_id = $_REQUEST['book_id'];
+            $borrow_id = $_REQUEST['borrow_id'];
+            $this->detailController->deleteOrder($book_id,$borrow_id);
+            header("location:index.php?page=list-borrow");
+        }
+    }
+
+    function showDateBorrow(){
+        if ($_SERVER['REQUEST_METHOD']=='GET'){
+            $orders = $this->detailController->showDateBorrow();
+            include_once 'src/View/detail/showDateBorrow.php';
+        }
+    }
+
+    function showReturnBorrow(){
+        if ($_SERVER['REQUEST_METHOD']=='GET'){
+            $orders = $this->detailController->showReturnBorrow();
+            include_once 'src/View/detail/showReturnBorrow.php';
+        }
+    }
+
+
+
 
 }

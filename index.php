@@ -17,6 +17,23 @@ $page = isset($_REQUEST['page']) ? $_REQUEST['page'] : NULL;
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <style>
+        table {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        td, th {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+
+        tr:nth-child() {
+            background-color: #dddddd;
+        }
+    </style>
 </head>
 <body>
 
@@ -73,6 +90,27 @@ switch ($page) {
         break;
     case 'update-status':
         $controllerBorrow->updateBorrow();
+        break;
+    case 'showFull-borrow':
+        $controllerDetail->showOrderBorrow();
+        break;
+    case 'showOrder-Id':
+        $controllerDetail->showOrderBorrowById();
+        break;
+    case 'delete-order':
+        $controllerDetail->deleteOrder();
+        break;
+    case 'delete-borrow':
+        $controllerBorrow->deleteBorrow();
+        break;
+    case 'show-dateBorrow':
+        $controllerDetail->showDateBorrow();
+        break;
+    case 'search-borrow':
+        $controllerBorrow->searchBorrow();
+        break;
+    case 'return-borrow':
+        $controllerDetail->showReturnBorrow();
         break;
     default:
         $controllerBook->viewBook();

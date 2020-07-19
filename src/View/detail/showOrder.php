@@ -1,4 +1,4 @@
-<h3>Thông tin phiếu mượn của sinh viên</h3>
+<h3>STUDENT BOOK TICKET INFORMATION</h3>
 
 <table>
     <tr>
@@ -19,8 +19,8 @@
             <tr>
                 <td><?php echo ++$key ?></td>
                 <td>
-                    <a href="">
-                    <?php echo "PM- " . $order["id"] ?></td>
+                    <a href="index.php?page=showOrder-Id&id=<?php echo $order['id'] ?>">
+                    <?php echo "Card Number: ". $order["id"] ?></td>
                 </a>
                 <td><?php echo $order["status"] ?></td>
                 <td><?php echo $order["date_borrow"] ?></td>

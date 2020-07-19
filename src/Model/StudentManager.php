@@ -15,7 +15,7 @@ class StudentManager
 
     function getAllStudent()
     {
-        $sql = "SELECT * FROM tbl_students";
+        $sql = "SELECT * FROM tbl_students ORDER  by id desc ";
         $statement = $this->dataStudent->connectDB()->query($sql);
         $statement->execute();
         $data = $statement->fetchAll();

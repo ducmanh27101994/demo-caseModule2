@@ -14,10 +14,8 @@ class BorrowController
     protected $students;
     public function __construct()
     {
-
         $this->borrowController = new BorrowManager();
         $this->students = new StudentManager();
-
     }
 
     function viewBorrow(){
@@ -45,7 +43,7 @@ class BorrowController
     function updateBorrow(){
         if($_SERVER['REQUEST_METHOD'] == 'GET'){
             $id = $_REQUEST['id'];
-            $students = $this->students->getAllStudent();
+
             $borrows = $this->borrowController->getBorrowById($id);
             include_once 'src/View/tbl_borrows/updateBorrows.php';
         } else {
@@ -57,8 +55,23 @@ class BorrowController
 
             $borrow = new Borrow($id,$date_borrow,$date_give,$status,$student_id);
             $this->borrowController->updateStatus($borrow);
-            header('location:index.php?page=view-order');
+            header('location:index.php?page=list-borrow');
 
+        }
+    }
+    function deleteBorrow(){
+        if($_SERVER['REQUEST_METHOD'] == 'GET'){
+            $id = $_REQUEST['id'];
+            $this->borrowController->deleteBorrow($id);
+            header('location:index.php?page=list-borrow');
+        }
+    }
+
+    function searchBorrow(){
+        if ($_SERVER['REQUEST_METHOD']=='POST'){
+            $keyword = $_POST['keyword'];
+            $borrows = $this->borrowController->searchBorrow($keyword);
+            include_once 'src/View/tbl_borrows/listBorrows.php';
         }
     }
 

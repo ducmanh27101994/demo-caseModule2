@@ -28,8 +28,9 @@ class BookController
             $name = $_POST['name'];
             $author = $_POST['author'];
             $status = $_POST['status'];
+            $image = $_POST['image'];
 
-            $book = new Book($name,$author,$status);
+            $book = new Book($name,$author,$status,$image);
             $this->bookController->addBook($book);
             header('location:index.php?page=list-book');
         }
@@ -51,8 +52,9 @@ class BookController
             $name = $_POST['name'];
             $author = $_POST['author'];
             $status = $_POST['status'];
+            $image = $_POST['image'];
 
-            $book = new Book($name,$author,$status);
+            $book = new Book($name,$author,$status,$image);
             $book->setId($id);
             $this->bookController->updateBook($book);
             header('location:index.php?page=list-book');

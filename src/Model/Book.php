@@ -10,17 +10,35 @@ class Book
     protected $name;
     protected $author;
     protected $status;
+    protected $image;
 
-    public function __construct($name,$author,$status)
+
+    public function __construct($name,$author,$status,$image)
     {
         $this->name=$name;
         $this->author=$author;
         $this->status=$status;
+        $this->image=$image;
+
     }
 
     /**
      * @return mixed
      */
+    public function getImage()
+    {
+        return $this->image;
+    }
+
+    /**
+     * @param mixed $image
+     */
+    public function setImage($image)
+    {
+        $this->image = $image;
+    }
+
+
     public function getId()
     {
         return $this->id;

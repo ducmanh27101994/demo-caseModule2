@@ -1,26 +1,5 @@
-<?php
-if ($_SERVER['REQUEST_METHOD'] == 'POST'){
-    $checkBorrow = $_POST['checkBorrow'];
-
-    if ($checkBorrow==='BOOK BORROWS'){
-     header('location:index.php?page=show-dateBorrow');
-    } elseif ($checkBorrow==='RETURN BOOKS BORROWS'){
-        header('location:index.php?page=return-borrow');
-    }
-
-}
-
-?>
-
 <h3>BOOK INFORMATION</h3>
-<form method="post" action="index.php?page=showFull-borrow">
-<select name="checkBorrow">
-    <option value="BOOK BORROWS">BOOK BORROWS</option>
-    <option value="RETURN BOOKS BORROWS">RETURN BOOKS BORROWS</option>
-</select>
-    <button type="submit">Submit</button>
-</form>
-
+<a href="index.php?page=add-orderBook">ADD BOOK BORROW</a>
 <table>
     <tr>
         <th>STT</th>
@@ -46,9 +25,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
             <tr>
                 <td><?php echo ++$key ?></td>
                 <td>
-                    <a href="index.php?page=showOrder-Id&id=<?php echo $order['id'];?>">
-                    <?php echo "Card Number: ". $order["id"] ?>
-                </a>
+                        <?php echo "Card Number: ". $order["id"] ?>
                 </td>
                 <td><?php echo $order["student_name"] ?></td>
                 <td><?php echo '0'.$order["phone"] ?></td>
@@ -58,6 +35,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
                 <td><?php echo $order["date_borrow"] ?></td>
                 <td><?php echo $order["date_give"] ?></td>
                 <td><?php echo $order["address"] ?></td>
+                <td><a href="index.php?page=delete-order&book_id=<?php echo $order['book_id']?>&borrow_id=<?php echo $order['borrow_id']?>">Delete</a></td>
             </tr>
         <?php endforeach; ?>
     <?php endif; ?>
