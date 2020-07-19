@@ -24,13 +24,21 @@ class BookController
         if($_SERVER['REQUEST_METHOD']=='GET'){
             include_once 'src/View/tbl_books/addBook.php';
         } else {
+            $file = $_FILES['image-file']['tmp_name'];
+            $path = "uploads/".$_FILES['image-file']['name'];
+            if (move_uploaded_file($file,$path)){
+                echo "Success";
+            } else {
+                echo "Unsuccessful";
+            }
+
             $id = $_POST['id'];
             $name = $_POST['name'];
             $author = $_POST['author'];
             $status = $_POST['status'];
-            $image = $_POST['image'];
+//            $image = $_POST['image'];
 
-            $book = new Book($name,$author,$status,$image);
+            $book = new Book($name,$author,$status,$path);
             $this->bookController->addBook($book);
             header('location:index.php?page=list-book');
         }
@@ -48,13 +56,21 @@ class BookController
             $book = $this->bookController->getBookId($id);
             include_once "src/View/tbl_books/updateBook.php";
         } else {
+            $file = $_FILES['image-file']['tmp_name'];
+            $path = "uploads/".$_FILES['image-file']['name'];
+            if (move_uploaded_file($file,$path)){
+                echo "Success";
+            } else {
+                echo "Unsuccessful";
+            }
+
             $id = $_REQUEST['id'];
             $name = $_POST['name'];
             $author = $_POST['author'];
             $status = $_POST['status'];
-            $image = $_POST['image'];
+//            $image = $_POST['image'];
 
-            $book = new Book($name,$author,$status,$image);
+            $book = new Book($name,$author,$status,$path);
             $book->setId($id);
             $this->bookController->updateBook($book);
             header('location:index.php?page=list-book');
