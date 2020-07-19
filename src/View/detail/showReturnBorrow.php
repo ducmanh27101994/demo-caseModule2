@@ -1,5 +1,7 @@
 <h3>STUDENTS PAY BOOKS</h3>
-
+<button onclick="window.history.go(-1); return false;">Back</button>
+<br>
+<br>
 <table>
     <tr>
         <th>STT</th>

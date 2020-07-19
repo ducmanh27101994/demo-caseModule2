@@ -44,7 +44,6 @@ class BorrowController
     function updateBorrow(){
         if($_SERVER['REQUEST_METHOD'] == 'GET'){
             $id = $_REQUEST['id'];
-
             $borrows = $this->borrowController->getBorrowById($id);
             include_once 'src/View/tbl_borrows/updateBorrows.php';
         } else {

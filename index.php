@@ -28,19 +28,20 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
     <title>Document</title>
     <style>
         table {
-            font-family: arial, sans-serif;
             border-collapse: collapse;
             width: 100%;
         }
 
-        td, th {
-            border: 1px solid #dddddd;
+        th, td {
             text-align: left;
             padding: 8px;
         }
 
-        tr:nth-child() {
-            background-color: #dddddd;
+        tr:nth-child(even){background-color: #f2f2f2}
+
+        th {
+            background-color: #4CAF50;
+            color: white;
         }
     </style>
 </head>

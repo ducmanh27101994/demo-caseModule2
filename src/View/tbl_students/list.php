@@ -4,6 +4,7 @@
     <button type="submit">Search</button>
     <button onclick="window.history.go(-1); return false;">Back</button>
 </form>
+<br>
 <table>
     <tr>
         <th>STT</th>

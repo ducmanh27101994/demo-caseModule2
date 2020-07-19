@@ -1,5 +1,7 @@
 <h3>Students borrow books</h3>
-
+<button onclick="window.history.go(-1); return false;">Back</button>
+<br>
+<br>
 <table>
     <tr>
         <th>STT</th>

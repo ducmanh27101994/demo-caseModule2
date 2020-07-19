@@ -7,7 +7,7 @@
 </select>
     <button type="submit">Submit</button>
 </form>
-
+<br>
 <table>
     <tr>
         <th>STT</th>
