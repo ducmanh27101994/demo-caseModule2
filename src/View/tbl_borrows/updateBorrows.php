@@ -3,8 +3,8 @@
     <input type="text" name="date_borrow" value="<?php echo $borrows['date_borrow']?>" >
     <input type="text" name="date_give" value="<?php echo $borrows['date_give']?>" >
     <select name="status">
-        <option value="Muon Sach">Muon Sach</option>
-        <option value="Tra Sach">Tra Sach</option>
+        <option value="Borrow Books">Borrow Books</option>
+        <option value="Give Book Back">Give Book Back</option>
     </select>
     <button type="submit">Submit</button>
     <button onclick="window.history.go(-1); return false;">Back</button>

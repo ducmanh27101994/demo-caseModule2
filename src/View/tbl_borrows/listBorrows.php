@@ -27,7 +27,7 @@
             <td><?php echo $borrow->getDateGive() ?></td>
             <td><?php echo $borrow->getStatus() ?></td>
             <td><a href="index.php?page=update-status&id=<?php echo $borrow->getId()?>">Update Status</a></td>
-            <td><a href="index.php?page=delete-borrow&id=<?php echo $borrow->getId()?>">Delete</a></td>
+            <td><a onclick="return confirm('Are you sure')" href="index.php?page=delete-borrow&id=<?php echo $borrow->getId()?>">Delete</a></td>
 
         </tr>
         <?php endforeach;?>

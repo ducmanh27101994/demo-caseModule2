@@ -26,6 +26,7 @@ class BorrowController
     function addBorrow(){
         if($_SERVER['REQUEST_METHOD']=='GET'){
             $students = $this->students->getAllStudent();
+            $id = 1000;
             include 'src/View/tbl_borrows/addBorrows.php';
         } else {
             $id = $_REQUEST['id'];

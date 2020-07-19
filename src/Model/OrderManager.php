@@ -54,14 +54,14 @@ class OrderManager
     }
 
     function showDateBorrow(){
-        $sql = "SELECT tbl_students.student_name, tbl_students.class,tbl_students.phone,tbl_students.address, tbl_borrows.date_borrow,tbl_borrows.date_give,tbl_borrows.status,tbl_books.name,tbl_books.author,tbl_borrows.id,tbl_detail.book_id,tbl_detail.borrow_id FROM tbl_students INNER JOIN tbl_borrows ON tbl_students.id=tbl_borrows.student_id INNER JOIN tbl_detail ON tbl_borrows.id = tbl_detail.borrow_id INNER JOIN tbl_books ON tbl_detail.book_id=tbl_books.id WHERE tbl_borrows.status=\"Muon Sach\" order by id desc ";
+        $sql = "SELECT tbl_students.student_name, tbl_students.class,tbl_students.phone,tbl_students.address, tbl_borrows.date_borrow,tbl_borrows.date_give,tbl_borrows.status,tbl_books.name,tbl_books.author,tbl_borrows.id,tbl_detail.book_id,tbl_detail.borrow_id FROM tbl_students INNER JOIN tbl_borrows ON tbl_students.id=tbl_borrows.student_id INNER JOIN tbl_detail ON tbl_borrows.id = tbl_detail.borrow_id INNER JOIN tbl_books ON tbl_detail.book_id=tbl_books.id WHERE tbl_borrows.status=\"Borrow Books\" order by id desc ";
         $statement = $this->orderBook->connectDB()->query($sql);
         $statement->execute();
         return $statement->fetchAll();
     }
 
     function showReturnBorrow(){
-        $sql = "SELECT tbl_students.student_name, tbl_students.class,tbl_students.phone,tbl_students.address, tbl_borrows.date_borrow,tbl_borrows.date_give,tbl_borrows.status,tbl_books.name,tbl_books.author,tbl_borrows.id,tbl_detail.book_id,tbl_detail.borrow_id FROM tbl_students INNER JOIN tbl_borrows ON tbl_students.id=tbl_borrows.student_id INNER JOIN tbl_detail ON tbl_borrows.id = tbl_detail.borrow_id INNER JOIN tbl_books ON tbl_detail.book_id=tbl_books.id WHERE tbl_borrows.status=\"Tra Sach\" order by id desc ";
+        $sql = "SELECT tbl_students.student_name, tbl_students.class,tbl_students.phone,tbl_students.address, tbl_borrows.date_borrow,tbl_borrows.date_give,tbl_borrows.status,tbl_books.name,tbl_books.author,tbl_borrows.id,tbl_detail.book_id,tbl_detail.borrow_id FROM tbl_students INNER JOIN tbl_borrows ON tbl_students.id=tbl_borrows.student_id INNER JOIN tbl_detail ON tbl_borrows.id = tbl_detail.borrow_id INNER JOIN tbl_books ON tbl_detail.book_id=tbl_books.id WHERE tbl_borrows.status=\"Give Book Back\" order by id desc ";
         $statement = $this->orderBook->connectDB()->query($sql);
         $statement->execute();
         return $statement->fetchAll();

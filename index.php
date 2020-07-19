@@ -7,7 +7,16 @@ $controllerBorrow = new \Study\Controller\BorrowController();
 $controllerDetail = new \Study\Controller\DetailController();
 $page = isset($_REQUEST['page']) ? $_REQUEST['page'] : NULL;
 
+if ($_SERVER['REQUEST_METHOD'] == 'POST'){
+    $checkBorrow = $_POST['checkBorrow'];
 
+    if ($checkBorrow==='BOOK BORROWS'){
+        header('location:index.php?page=show-dateBorrow');
+    } elseif ($checkBorrow==='RETURN BOOKS BORROWS'){
+        header('location:index.php?page=return-borrow');
+    }
+
+}
 ?>
 <!doctype html>
 <html lang="en">

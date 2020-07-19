@@ -1,10 +1,10 @@
 <form method="post">
-    <input type="text" name="id" placeholder="Card (1xxx)" required>
+    <input type="number" name="id" placeholder="Card (1xxx)"  value="<?php echo $id ?>" required>
     <input type="datetime-local" name="date_borrow" placeholder="yyyy-mm-dd" required>
     <input type="datetime-local" name="date_give" placeholder="yyyy-mm-dd" required>
     <select name="status">
-        <option value="Muon Sach">Muon Sach</option>
-        <option value="Tra Sach">Tra Sach</option>
+        <option value="Borrow Books">Borrow Books</option>
+        <option value="Give Book Back">Give Book Back</option>
     </select>
 
     <select name="student_id">

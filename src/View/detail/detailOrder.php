@@ -1,19 +1,6 @@
-<?php
-if ($_SERVER['REQUEST_METHOD'] == 'POST'){
-    $checkBorrow = $_POST['checkBorrow'];
-
-    if ($checkBorrow==='BOOK BORROWS'){
-     header('location:index.php?page=show-dateBorrow');
-    } elseif ($checkBorrow==='RETURN BOOKS BORROWS'){
-        header('location:index.php?page=return-borrow');
-    }
-
-}
-
-?>
 
 <h3>BOOK INFORMATION</h3>
-<form method="post" action="index.php?page=showFull-borrow">
+<form method="post" action="index.php">
 <select name="checkBorrow">
     <option value="BOOK BORROWS">BOOK BORROWS</option>
     <option value="RETURN BOOKS BORROWS">RETURN BOOKS BORROWS</option>

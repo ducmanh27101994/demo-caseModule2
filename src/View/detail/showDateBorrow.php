@@ -24,10 +24,8 @@
         <?php foreach ($orders as $key => $order): ?>
             <tr>
                 <td><?php echo ++$key ?></td>
-                <td>
-                    <a href="index.php?page=showOrder-Id&id=<?php echo $order['id'];?>">
-                        <?php echo "Card Number: ". $order["id"] ?>
-                    </a>
+                <td> <a href="index.php?page=showOrder-Id&id=<?php echo $order['id'];?>">
+                        <?php echo "Card Number: ". $order["id"] ?></a>
                 </td>
                 <td><?php echo $order["student_name"] ?></td>
                 <td><?php echo '0'.$order["phone"] ?></td>

@@ -24,7 +24,7 @@
         <td><?php echo $student->getClass() ?></td>
         <td><?php echo "0".$student->getPhone() ?></td>
         <td><?php echo $student->getAddress() ?></td>
-        <td><a href="index.php?page=delete-student&id=<?php echo $student->getId() ?>">Delete</a></td>
+        <td><a onclick="return confirm('Are you sure')" href="index.php?page=delete-student&id=<?php echo $student->getId() ?>">Delete</a></td>
         <td><a href="index.php?page=update-student&id=<?php echo $student->getId() ?>">Update</a></td>
     </tr>
     <?php endforeach;?>

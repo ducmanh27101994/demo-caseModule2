@@ -35,7 +35,7 @@
                 <td><?php echo $order["date_borrow"] ?></td>
                 <td><?php echo $order["date_give"] ?></td>
                 <td><?php echo $order["address"] ?></td>
-                <td><a href="index.php?page=delete-order&book_id=<?php echo $order['book_id']?>&borrow_id=<?php echo $order['borrow_id']?>">Delete</a></td>
+                <td><a onclick="return confirm('Are you sure')" href="index.php?page=delete-order&book_id=<?php echo $order['book_id']?>&borrow_id=<?php echo $order['borrow_id']?>">Delete</a></td>
             </tr>
         <?php endforeach; ?>
     <?php endif; ?>

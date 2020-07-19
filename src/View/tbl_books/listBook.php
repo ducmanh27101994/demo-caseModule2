@@ -26,7 +26,7 @@
     <td><?php echo $book->getAuthor() ?></td>
     <td><?php echo $book->getStatus() ?></td>
     <td><img src="<?php echo $book->getImage() ?>" style="width: 65px;height: 65px"></td>
-    <td><a href="index.php?page=delete-book&id=<?php echo $book->getId() ?>">Delete</a></td>
+    <td><a onclick="return confirm('Are you sure')" href="index.php?page=delete-book&id=<?php echo $book->getId() ?>">Delete</a></td>
     <td><a href="index.php?page=update-book&id=<?php echo $book->getId() ?>">Update</a></td>
     <td></td>
 </tr>
