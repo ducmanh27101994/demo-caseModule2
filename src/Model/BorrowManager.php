@@ -80,5 +80,20 @@ class BorrowManager
         return $arr;
     }
 
+    function searchDateBorrow($date1,$date2){
+        $sql = "SELECT * FROM `tbl_borrows` WHERE `date_give` BETWEEN :date1 AND :date2";
+        $statement = $this->borrowManager->connectDB()->prepare($sql);
+        $statement->bindValue(':date1',$date1);
+        $statement->bindValue(':date2',$date2);
+        $statement->execute();
+        $data = $statement->fetchAll();
+        $arr = [];
+        foreach ($data as $key => $item){
+            $borrow = new Borrow($item['id'],$item['date_borrow'],$item['date_give'],$item['status'],$item['student_id']);
+            array_push($arr,$borrow);
+        }
+        return $arr;
+    }
+
 
 }

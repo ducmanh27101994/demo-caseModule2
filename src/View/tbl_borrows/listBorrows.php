@@ -1,8 +1,16 @@
 <a href="index.php?page=add-borrow">Add Borrow</a>
 <form method="post" action="index.php?page=search-borrow">
     <input type="text" name="keyword" placeholder="Search Borrow">
-    <button type="submit">Search Borrow</button>
+    <button type="submit" name="searchBorrow">Search Borrow</button>
+    <br>
+    <br>
+    <input type="date" name="date1">
+    <input type="date" name="date2">
+    <button type="submit" name="searchDate">Search Date</button>
     <button onclick="window.history.go(-1); return false;">Back</button>
+    <br>
+
+
 </form>
 <br>
 <table>

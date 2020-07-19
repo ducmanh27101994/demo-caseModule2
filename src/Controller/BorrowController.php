@@ -68,11 +68,25 @@ class BorrowController
     }
 
     function searchBorrow(){
+
         if ($_SERVER['REQUEST_METHOD']=='POST'){
             $keyword = $_POST['keyword'];
-            $borrows = $this->borrowController->searchBorrow($keyword);
-            include_once 'src/View/tbl_borrows/listBorrows.php';
+            $date1 = $_POST['date1'];
+            $date2 = $_POST['date2'];
+            $searchBorrow = $_POST['searchBorrow'];
+            $searchDate = $_POST['searchDate'];
+
+            if (isset($searchBorrow)) {
+                $borrows = $this->borrowController->searchBorrow($keyword);
+                include_once 'src/View/tbl_borrows/listBorrows.php';
+            } else if (isset($searchDate)){
+                $borrows = $this->borrowController->searchDateBorrow($date1,$date2);
+                include_once 'src/View/tbl_borrows/listBorrows.php';
+            }
         }
     }
+
+
+
 
 }
