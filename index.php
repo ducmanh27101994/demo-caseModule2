@@ -5,6 +5,7 @@ $controllerStudent = new \Study\Controller\StudentController();
 $controllerBook = new \Study\Controller\BookController();
 $controllerBorrow = new \Study\Controller\BorrowController();
 $controllerDetail = new \Study\Controller\DetailController();
+$controllerCategory = new \Study\Controller\CategoryController();
 $page = isset($_REQUEST['page']) ? $_REQUEST['page'] : NULL;
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST'){
@@ -122,8 +123,23 @@ switch ($page) {
     case 'return-borrow':
         $controllerDetail->showReturnBorrow();
         break;
+    case 'list-category':
+        $controllerCategory->viewAllCategory();
+        break;
+    case 'add-category':
+        $controllerCategory->addCategory();
+        break;
+    case 'delete-category':
+        $controllerCategory->deleteCategory();
+        break;
+    case 'update-category':
+        $controllerCategory->updateCategory();
+        break;
+    case 'search-category':
+        $controllerCategory->searchCategory();
+        break;
     default:
-        $controllerBook->viewBook();
+        $controllerCategory->viewAllCategory();
 }
 ?>
 

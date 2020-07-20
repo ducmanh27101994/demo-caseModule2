@@ -4,12 +4,11 @@
     <button type="submit" name="searchBorrow">Search Borrow</button>
     <br>
     <br>
-    <input type="date" name="date1">
-    <input type="date" name="date2">
+    <input type="date" name="date1" required>
+    <input type="date" name="date2" required>
     <button type="submit" name="searchDate">Search Date</button>
     <button onclick="window.history.go(-1); return false;">Back</button>
     <br>
-
 
 </form>
 <br>

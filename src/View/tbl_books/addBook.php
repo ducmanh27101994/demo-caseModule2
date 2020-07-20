@@ -3,6 +3,7 @@
     <input type="text" name="author" placeholder="Author" required>
     <input type="text" name="status" placeholder="Status" required>
     <input type="file" name="image-file" placeholder="Image" required>
+
     <br>
     <br>
     <button type="submit">Add Book</button>
