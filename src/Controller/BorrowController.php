@@ -37,7 +37,7 @@ class BorrowController
 
             $borrow = new Borrow($id,$date_borrow,$date_give,$status,$student_id);
             $this->borrowController->addBorrow($borrow);
-            header('location:index.php?page=add-orderBook');
+            header('location:admin.php?page=add-orderBook');
         }
     }
 
@@ -55,7 +55,7 @@ class BorrowController
 
             $borrow = new Borrow($id,$date_borrow,$date_give,$status,$student_id);
             $this->borrowController->updateStatus($borrow);
-            header('location:index.php?page=list-borrow');
+            header('location:admin.php?page=list-borrow');
 
         }
     }
@@ -63,7 +63,7 @@ class BorrowController
         if($_SERVER['REQUEST_METHOD'] == 'GET'){
             $id = $_REQUEST['id'];
             $this->borrowController->deleteBorrow($id);
-            header('location:index.php?page=list-borrow');
+            header('location:admin.php?page=list-borrow');
         }
     }
 

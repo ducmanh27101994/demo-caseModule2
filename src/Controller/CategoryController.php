@@ -32,7 +32,7 @@ class CategoryController
             $comment = $_REQUEST['comment'];
             $category = new Category($name, $comment);
             $this->categoryController->addCategory($category);
-            header('location:index.php?page=list-category');
+            header('location:admin.php?page=list-category');
         }
     }
 
@@ -41,7 +41,7 @@ class CategoryController
         if ($_SERVER['REQUEST_METHOD'] == 'GET') {
             $id = $_REQUEST['id'];
             $this->categoryController->deleteCategory($id);
-            header('location:index.php?page=list-category');
+            header('location:admin.php?page=list-category');
         }
     }
 
@@ -58,7 +58,7 @@ class CategoryController
             $category = new Category($name, $comment);
             $category->setId($id);
             $this->categoryController->updateCategory($category);
-            header('location:index.php?page=list-category');
+            header('location:admin.php?page=list-category');
 
         }
     }

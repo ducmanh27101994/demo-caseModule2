@@ -35,7 +35,7 @@ class StudentController
 
             $student = new Student($student_name, $class, $phone, $address);
             $this->studentController->addStudent($student);
-            header('location:index.php?page=list-student');
+            header('location:admin.php?page=list-student');
         }
     }
 
@@ -44,7 +44,7 @@ class StudentController
         if ($_SERVER['REQUEST_METHOD'] == 'GET') {
             $id = $_REQUEST['id'];
             $this->studentController->deleteStudent($id);
-            header('location:index.php?page=list-student');
+            header('location:admin.php?page=list-student');
         }
     }
 
@@ -65,7 +65,7 @@ class StudentController
             $student->setId($id);
             $this->studentController->updateStudent($student);
 
-            header('location:index.php?page=list-student');
+            header('location:admin.php?page=list-student');
         }
     }
 

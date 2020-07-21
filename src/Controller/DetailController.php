@@ -33,7 +33,7 @@ class DetailController
             $borrow_id = $_REQUEST['borrow_id'];
 
             $this->detailController->addOrderBook($book_id,$borrow_id);
-            header("location:index.php?page=view-order");
+            header("location:admin.php?page=view-order");
         }
     }
 
@@ -66,7 +66,7 @@ class DetailController
             $book_id = $_REQUEST['book_id'];
             $borrow_id = $_REQUEST['borrow_id'];
             $this->detailController->deleteOrder($book_id,$borrow_id);
-            header("location:index.php?page=list-borrow");
+            header("location:admin.php?page=list-borrow");
         }
     }
 

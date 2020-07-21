@@ -9,4 +9,5 @@
 <a style="margin-right: 20px" href="index.php?page=showFull-borrow">FULL BORROWS</a>
 <a style="margin-right: 20px" href="index.php?page=show-dateBorrow">BOOKS BORROWS</a>
 <a style="margin-right: 20px" href="index.php?page=return-borrow">RETURN BOOKS BORROWS</a>
+<a style="margin-right: 20px" href="index.php?page=logout">Logout</a>
 

@@ -5,13 +5,13 @@
     <button type="submit">Search</button>
     <button onclick="window.history.go(-1); return false;">Back</button>
 </form>
-
+<br>
 <table>
     <tr>
-        <td>STT</td>
-        <td>CATEGORY</td>
-        <td>COMMENT</td>
-        <td colspan="2">ACTION</td>
+        <th>STT</th>
+        <th>CATEGORY</th>
+        <th>COMMENT</th>
+        <th colspan="2">ACTION</th>
     </tr>
     <?php if(empty($categorys)): ?>
     <tr>

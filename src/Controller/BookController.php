@@ -6,6 +6,7 @@ namespace Study\Controller;
 
 use Study\Model\Book;
 use Study\Model\BookManager;
+use Study\Model\CategoryManager;
 
 class BookController
 {
@@ -14,14 +15,23 @@ class BookController
     public function __construct()
     {
         $this->bookController = new BookManager();
+        $this->category = new CategoryManager();
     }
     function viewBook(){
         $books = $this->bookController->getAllBook();
+
         include_once 'src/View/tbl_books/listBook.php';
     }
+    function viewBookUser(){
+        $books = $this->bookController->getAllBook();
+
+        include_once 'src/View/tbl_books/userBook.php';
+    }
+
 
     function add_Book(){
         if($_SERVER['REQUEST_METHOD']=='GET'){
+            $categorys = $this->category->getAllCategory();
             include_once 'src/View/tbl_books/addBook.php';
         } else {
             $file = $_FILES['image-file']['tmp_name'];
@@ -36,24 +46,26 @@ class BookController
             $name = $_POST['name'];
             $author = $_POST['author'];
             $status = $_POST['status'];
-//            $image = $_POST['image'];
+            $category_id = $_POST['category_id'];
 
-            $book = new Book($name,$author,$status,$path);
+
+            $book = new Book($name,$author,$status,$path,$category_id);
             $this->bookController->addBook($book);
-            header('location:index.php?page=list-book');
+            header('location:admin.php?page=list-book');
         }
     }
     function delete_book(){
         if ($_SERVER['REQUEST_METHOD']=='GET'){
             $id = $_REQUEST['id'];
             $this->bookController->deleteBook($id);
-            header('location:index.php?page=list-book');
+            header('location:admin.php?page=list-book');
         }
     }
     function update_book(){
         if($_SERVER['REQUEST_METHOD']=='GET'){
             $id = $_REQUEST['id'];
             $book = $this->bookController->getBookId($id);
+            $categorys = $this->category->getAllCategory();
             include_once "src/View/tbl_books/updateBook.php";
         } else {
             $file = $_FILES['image-file']['tmp_name'];
@@ -69,11 +81,12 @@ class BookController
             $author = $_POST['author'];
             $status = $_POST['status'];
 //            $image = $_POST['image'];
+            $category_id = $_POST['category_id'];
 
-            $book = new Book($name,$author,$status,$path);
+            $book = new Book($name,$author,$status,$path,$category_id);
             $book->setId($id);
             $this->bookController->updateBook($book);
-            header('location:index.php?page=list-book');
+            header('location:admin.php?page=list-book');
         }
     }
     function search_book(){

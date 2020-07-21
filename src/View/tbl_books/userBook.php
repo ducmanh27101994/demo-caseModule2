@@ -1,4 +1,4 @@
-<a href="index.php?page=add-book">Add Book</a>
+<a style="margin-right: 20px" href="index.php?page=logout">Logout</a>
 <br>
 <form method="post" action="index.php?page=search-book">
     <input type="text" name="keywordBook" placeholder="Search Book">

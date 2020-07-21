@@ -11,15 +11,33 @@ class Book
     protected $author;
     protected $status;
     protected $image;
+    protected $category_id;
 
 
-    public function __construct($name,$author,$status,$image)
+    public function __construct($name,$author,$status,$image,$category_id)
     {
         $this->name=$name;
         $this->author=$author;
         $this->status=$status;
         $this->image=$image;
+        $this->category_id=$category_id;
 
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getCategoryId()
+    {
+        return $this->category_id;
+    }
+
+    /**
+     * @param mixed $category_id
+     */
+    public function setCategoryId($category_id)
+    {
+        $this->category_id = $category_id;
     }
 
     /**
