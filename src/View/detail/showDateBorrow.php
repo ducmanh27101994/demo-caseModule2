@@ -1,21 +1,26 @@
-<h3>Students borrow books</h3>
-<button onclick="window.history.go(-1); return false;">Back</button>
+
 <br>
-<br>
-<table>
+<div class="container">
+    <br>
+    <h2>Students borrow books</h2>
+    <br>
+<table id="showBorrowBook" class="table">
+    <thead class="thead-dark">
     <tr>
         <th>STT</th>
-        <th>CARD</th>
-        <th>STUDENT NAME</th>
+        <th class="card-th">CARD</th>
+        <th>STUDENT</th>
         <th>PHONE</th>
         <th>BOOK</th>
         <th>AUTHOR</th>
-        <th>STATUS</th>
+        <th class="status-th">STATUS</th>
         <th>DATE BORROW</th>
         <th>RETURN BORROW</th>
         <th>ADDRESS</th>
 
     </tr>
+    </thead>
+    <tbody>
     <?php if (empty($orders)): ?>
         <tr>
             <th>
@@ -27,7 +32,7 @@
             <tr>
                 <td><?php echo ++$key ?></td>
                 <td> <a href="index.php?page=showOrder-Id&id=<?php echo $order['id'];?>">
-                        <?php echo "Card Number: ". $order["id"] ?></a>
+                        <?php echo "Card: ". $order["id"] ?></a>
                 </td>
                 <td><?php echo $order["student_name"] ?></td>
                 <td><?php echo '0'.$order["phone"] ?></td>
@@ -40,4 +45,6 @@
             </tr>
         <?php endforeach; ?>
     <?php endif; ?>
+    </tbody>
 </table>
+</div>

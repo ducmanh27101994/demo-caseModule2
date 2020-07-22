@@ -1,10 +1,12 @@
-<h3>BOOK INFORMATION</h3>
 <a href="index.php?page=add-orderBook">ADD BOOK BORROW</a>
-<table>
+<div class="container">
+    <h2>Information Borrows Book</h2>
+<table class="table">
+    <thead class="thead-dark">
     <tr>
         <th>STT</th>
         <th>CARD</th>
-        <th>STUDENT NAME</th>
+        <th>STUDENT</th>
         <th>PHONE</th>
         <th>BOOK</th>
         <th>AUTHOR</th>
@@ -12,8 +14,9 @@
         <th>DATE BORROW</th>
         <th>RETURN BORROW</th>
         <th>ADDRESS</th>
-
     </tr>
+    </thead>
+    <tbody>
     <?php if (empty($orders)): ?>
         <tr>
             <th>
@@ -35,8 +38,10 @@
                 <td><?php echo $order["date_borrow"] ?></td>
                 <td><?php echo $order["date_give"] ?></td>
                 <td><?php echo $order["address"] ?></td>
-                <td><a onclick="return confirm('Are you sure')" href="index.php?page=delete-order&book_id=<?php echo $order['book_id']?>&borrow_id=<?php echo $order['borrow_id']?>">Delete</a></td>
+                <td><a class="btn btn-danger" onclick="return confirm('Are you sure')" href="index.php?page=delete-order&book_id=<?php echo $order['book_id']?>&borrow_id=<?php echo $order['borrow_id']?>">Delete</a></td>
             </tr>
         <?php endforeach; ?>
     <?php endif; ?>
+    </tbody>
 </table>
+</div>

@@ -1,27 +1,35 @@
-
-<h3>BOOK INFORMATION</h3>
+<div class="container-fluid">
+    <br>
 <form method="post" action="index.php">
-<select name="checkBorrow">
+<select class="custom-select custom-select-lg mb-3" name="checkBorrow">
     <option value="BOOK BORROWS">BOOK BORROWS</option>
     <option value="RETURN BOOKS BORROWS">RETURN BOOKS BORROWS</option>
 </select>
-    <button type="submit">Submit</button>
+    <button id="sb-borrow" class="btn btn-outline-secondary" type="submit">Submit</button>
 </form>
 <br>
-<table>
+</div>
+<br>
+<div class="container">
+    <br>
+    <h2>Full Information Borrows Book</h2>
+    <br>
+<table id="full-borrow" class="table">
+    <thead class="thead-dark">
     <tr>
         <th>STT</th>
-        <th>CARD</th>
-        <th>STUDENT NAME</th>
+        <th class="card-th">CARD</th>
+        <th>STUDENT</th>
         <th>PHONE</th>
         <th>BOOK</th>
         <th>AUTHOR</th>
-        <th>STATUS</th>
+        <th class="status-th">STATUS</th>
         <th>DATE BORROW</th>
         <th>RETURN BORROW</th>
         <th>ADDRESS</th>
-
     </tr>
+    </thead>
+    <tbody>
     <?php if (empty($orders)): ?>
         <tr>
             <th>
@@ -34,7 +42,7 @@
                 <td><?php echo ++$key ?></td>
                 <td>
                     <a href="index.php?page=showOrder-Id&id=<?php echo $order['id'];?>">
-                    <?php echo "Card Number: ". $order["id"] ?>
+                    <?php echo "Card: ". $order["id"] ?>
                 </a>
                 </td>
                 <td><?php echo $order["student_name"] ?></td>
@@ -48,4 +56,6 @@
             </tr>
         <?php endforeach; ?>
     <?php endif; ?>
+    </tbody>
 </table>
+</div>

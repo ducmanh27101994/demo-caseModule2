@@ -1,6 +1,10 @@
-<h3>STUDENT BOOK TICKET INFORMATION</h3>
-
-<table>
+<br>
+<div class="container">
+    <br>
+    <h2>Student Book Ticket Information</h2>
+    <br>
+<table class="table">
+    <thead class="thead-dark">
     <tr>
         <th>STT</th>
         <th>Card</th>
@@ -8,6 +12,8 @@
         <th>Date Borrow</th>
         <th>Return Borrow</th>
     </tr>
+    </thead>
+    <tbody>
     <?php if (empty($orders)): ?>
         <tr>
             <th>
@@ -28,4 +34,6 @@
             </tr>
         <?php endforeach; ?>
     <?php endif; ?>
+    <tbody>
 </table>
+</div>

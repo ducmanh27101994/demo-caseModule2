@@ -1,0 +1,94 @@
+body {
+    background-color: #f0f0f0;
+    font-family: Roboto;
+}
+
+.container {
+    background-color: white;
+}
+
+.container-fluid {
+    background-color: white;
+    padding-left: 67px;
+}
+
+.table .thead-dark th {
+    vertical-align: middle;
+}
+
+.table td, .table th {
+    vertical-align: middle;
+}
+
+.navbar-nav {
+    margin-left: 45px;
+}
+
+.btn-outline-danger {
+    margin-left: 340px;
+}
+
+.btn-outline-secondary {
+    margin-left: 5px;
+}
+
+.form-inline {
+    margin-left: 90px;
+}
+
+#category-menu {
+    margin-left: 140px;
+}
+
+#student-menu {
+    margin-left: 75px;
+}
+
+#add-student {
+    margin-left: 8px;
+}
+
+#add-category {
+    margin-left: 10px;
+}
+
+#search-borrow {
+    width: 370px;
+}
+
+#borrow {
+    margin-left: 20px;
+}
+
+#add-borrow {
+    margin-top: 25px;
+    width: 25%;
+    height: auto;
+}
+
+.mb-3 {
+    width: 35%;
+}
+
+#sb-borrow {
+    margin-left: 5px;
+    width: 8%;
+    height: 47px;
+    margin-bottom: 16px;
+}
+
+#full-borrow {
+    font-size: small;
+}
+.card-th{
+    width: 90px;
+}
+.status-th{
+    width: 120px;
+}
+#showBorrowBook{
+    font-size: small ;
+}
+#return-borrow{
+    font-size: small ;
+}

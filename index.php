@@ -12,9 +12,10 @@ $page = isset($_REQUEST['page']) ? $_REQUEST['page'] : NULL;
 
 
 
-if ($_SESSION['username'] === "root"  && $_SESSION['password']==="leducmanh"){
+if (isset($_SESSION['username']) && isset($_SESSION['password'])){
     include ('admin.php');
 }
 else {
-    include ('src/View/login/login.php');
+    include ('src/View/login/loginNew.php');
 }
+?>

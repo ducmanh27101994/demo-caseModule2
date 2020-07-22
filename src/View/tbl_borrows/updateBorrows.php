@@ -7,5 +7,5 @@
         <option value="Give Book Back">Give Book Back</option>
     </select>
     <button type="submit">Submit</button>
-    <button onclick="window.history.go(-1); return false;">Back</button>
+    <button class="btn btn-secondary" onclick="window.history.go(-1); return false;">Back</button>
 </form>

@@ -11,6 +11,6 @@
     </select>
     <br>
     <br>
-    <button type="submit">Update Book</button>
-    <button onclick="window.history.go(-1); return false;">Back</button>
+    <button class="btn btn-secondary" type="submit">Update Book</button>
+    <button class="btn btn-secondary" onclick="window.history.go(-1); return false;">Back</button>
 </form>
